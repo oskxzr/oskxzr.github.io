@@ -23,13 +23,17 @@ if (identity == null) {
     fetch('https://Chanel-Backend.oskxzr.repl.co/users?code=' + identity)
         .then(response => response.json())
         .then(data => {
-            const profile = document.createElement("div")
-            profile.classList.add("profile")
-            buttonsHolder.appendChild(profile)
+            const logout = document.createElement("a")
+            logout.innerHTML = "Logout"
+            buttonsHolder.appendChild(logout)
+
+            const username = document.createElement("p")
+            username.innerHTML = data["name"] + "#" + data["discriminator"]
+            buttonsHolder.appendChild(username)
         
             const profilePic = document.createElement("img")
             profilePic.src = `https://cdn.discordapp.com/avatars/${data["id"]}/${data["avatar"]}.jpeg`
-            profile.appendChild(profilePic)
+            buttonsHolder.appendChild(profilePic)
         })
         .catch(err => {
             console.error(err)
