@@ -28,6 +28,7 @@ if (identity == null) {
             buttonsHolder.appendChild(login)
         
             const profilePic = document.createElement("img")
+            profilePic.src = `https://cdn.discordapp.com/avatars/${data["id"]}/${data["avatar"]}.jpeg`
         })
         .catch(err => {
             window.location.replace("https://kats.nz/logout")

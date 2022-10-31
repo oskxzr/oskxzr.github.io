@@ -11,7 +11,7 @@ if (code !== null) {
             console.log(data)
             localStorage.setItem("identity", data)
             console.log(localStorage.getItem("identity"))
-            // window.location.replace("https://kats.nz")
+            window.location.replace("https://kats.nz")
         })
         .catch(err => {
             console.log(response)
