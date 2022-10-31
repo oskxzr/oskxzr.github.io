@@ -10,7 +10,7 @@ if (code !== null) {
         .then(data => {
             console.log(data)
             sessionStorage.setItem("identity", data)
-            sessionStorage.getItem("identity")
+            console.log(sessionStorage.getItem("identity"))
             // window.location.replace("https://kats.nz")
         })
         .catch(err => {
