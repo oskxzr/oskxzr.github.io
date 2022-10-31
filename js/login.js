@@ -9,8 +9,8 @@ if (code !== null) {
         .then(response => response.json())
         .then(data => {
             console.log(data)
-            sessionStorage.setItem("identity", data)
-            console.log(sessionStorage.getItem("identity"))
+            localStorage.setItem("identity", data)
+            console.log(localStorage.getItem("identity"))
             // window.location.replace("https://kats.nz")
         })
         .catch(err => {

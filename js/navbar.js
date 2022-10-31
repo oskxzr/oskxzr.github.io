@@ -11,7 +11,7 @@ buttonsHolder.classList.add("buttonsholder")
 navbarHolder.appendChild(buttonsHolder)
 
 // check if they are logged in
-const identity = sessionStorage.getItem("identity")
+const identity = localStorage.getItem("identity")
 
 if (identity == null) {
     const login = document.createElement("a")
@@ -20,5 +20,16 @@ if (identity == null) {
     login.classList.add("login")
     buttonsHolder.appendChild(login)
 } else {
-    
+    fetch('https://Chanel-Backend.oskxzr.repl.co/users?code=' + identity)
+        .then(response => response.json())
+        .then(data => {
+            const profile = document.createElement("div")
+            profile.classList.add("profile")
+            buttonsHolder.appendChild(login)
+        
+            const profilePic = document.createElement("img")
+        })
+        .catch(err => {
+            window.location.replace("https://kats.nz/logout")
+        });
 }
