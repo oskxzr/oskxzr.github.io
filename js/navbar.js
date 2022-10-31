@@ -32,6 +32,6 @@ if (identity == null) {
         })
         .catch(err => {
             console.error(err)
-            window.location.replace("https://kats.nz/logout")
+            // window.location.replace("https://kats.nz/logout")
         });
 }
