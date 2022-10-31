@@ -31,6 +31,7 @@ if (identity == null) {
             profilePic.src = `https://cdn.discordapp.com/avatars/${data["id"]}/${data["avatar"]}.jpeg`
         })
         .catch(err => {
+            console.error(err)
             window.location.replace("https://kats.nz/logout")
         });
 }
