@@ -25,10 +25,11 @@ if (identity == null) {
         .then(data => {
             const profile = document.createElement("div")
             profile.classList.add("profile")
-            buttonsHolder.appendChild(login)
+            buttonsHolder.appendChild(profile)
         
             const profilePic = document.createElement("img")
             profilePic.src = `https://cdn.discordapp.com/avatars/${data["id"]}/${data["avatar"]}.jpeg`
+            profile.appendChild(profilePic)
         })
         .catch(err => {
             console.error(err)
