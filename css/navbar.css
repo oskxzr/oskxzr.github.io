@@ -1,0 +1,23 @@
+.navbar {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: grey;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar .title {
+    font-size: 20px;
+}
+
+.navbar .buttonsholder {
+    display: flex;
+}
+
+.navbar .login {
+    font-size: 20px;
+}
