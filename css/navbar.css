@@ -1,23 +1,52 @@
+@font-face {
+    font-family: coolvetica;
+    src: url(fonts/coolvetica.otf);
+}
+
+body {
+    margin: 0;
+}
+
+.visible {
+    opacity: 1 !important; 
+}
+
 .navbar {
     height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: grey;
+    background: #FFE5EC;
+    opacity: 0;
+    transition: 2s;
+    font-family: coolvetica;
 }
 
 .navbar a {
     text-decoration: none;
+    color: #FFB3C6;
+    font-family: coolvetica;
 }
 
 .navbar .title {
-    font-size: 20px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-left: 10px;
+    color: #FB6F92;
+    font-family: coolvetica;
 }
 
 .navbar .buttonsholder {
     display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #FFB3C6;
+    font-family: coolvetica;
+    font-size: 18px;
 }
 
-.navbar .login {
-    font-size: 20px;
+.navbar img {
+    height: 40px;
+    border-radius: 20px;
+    margin-right: 10px;
 }

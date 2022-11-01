@@ -1,7 +1,9 @@
 const navbarHolder = document.getElementById("navbar")
 
 const title = document.createElement("a")
-title.innerHTML = "kats"
+const titleb = document.createElement("b")
+titleb.innerHTML = "kats"
+title.appendChild(titleb)
 title.href = "/"
 title.classList.add("title")
 navbarHolder.appendChild(title)
@@ -25,18 +27,38 @@ if (identity == null) {
         .then(data => {
             const logout = document.createElement("a")
             logout.innerHTML = "Logout"
+            logout.href = "/logout"
             buttonsHolder.appendChild(logout)
 
+            const profile = document.createElement("a")
+            profile.innerHTML = "Edit Profile"
+            profile.href = "/myprofile"
+            buttonsHolder.appendChild(profile)
+
             const username = document.createElement("p")
-            username.innerHTML = data["name"] + "#" + data["discriminator"]
+            console.log(data)
+            username.innerHTML = data["username"] + "#" + data["discriminator"]
             buttonsHolder.appendChild(username)
         
             const profilePic = document.createElement("img")
             profilePic.src = `https://cdn.discordapp.com/avatars/${data["id"]}/${data["avatar"]}.jpeg`
             buttonsHolder.appendChild(profilePic)
+
+            function onLoaded(){
+                navbarHolder.classList.add("visible")
+            }
+
+            console.log(document.readyState)
+
+            if(document.readyState === 'complete') {
+                onLoaded()
+            } else {
+            window.addEventListener('load', function () {
+                onLoaded()
+              })
+            }
         })
         .catch(err => {
-            console.error(err)
-            // window.location.replace("https://kats.nz/logout")
+            window.location.replace("https://kats.nz/logout")
         });
 }
