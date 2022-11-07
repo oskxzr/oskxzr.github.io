@@ -43,10 +43,10 @@ body {
     color: #FFB3C6;
     font-family: coolvetica;
     font-size: 18px;
+    margin-right: 10px;
 }
 
 .navbar img {
     height: 40px;
     border-radius: 20px;
-    margin-right: 10px;
 }
