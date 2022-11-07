@@ -44,21 +44,22 @@ if (identity == null) {
             profilePic.src = `https://cdn.discordapp.com/avatars/${data["id"]}/${data["avatar"]}.jpeg`
             buttonsHolder.appendChild(profilePic)
 
-            function onLoaded(){
-                navbarHolder.classList.add("visible")
-            }
-
-            console.log(document.readyState)
-
-            if(document.readyState === 'complete') {
-                onLoaded()
-            } else {
-            window.addEventListener('load', function () {
-                onLoaded()
-              })
-            }
         })
         .catch(err => {
             window.location.replace("https://kats.nz/logout")
         });
+}
+
+function onLoaded(){
+    navbarHolder.classList.add("visible")
+}
+
+console.log(document.readyState)
+
+if(document.readyState === 'complete') {
+    onLoaded()
+} else {
+window.addEventListener('load', function () {
+    onLoaded()
+  })
 }
